@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-saffron: #FF9933;
+  --color-saffron-dark: #E67E22;
+  --color-marigold: #FFC61A;
+  --color-deepred: #8B0000;
+  --color-deepred-light: #A30000;
+  --color-gold: #FFD700;
+  --color-cream: #FFFDD0;
+  --color-cream-light: #FFFDF2;
+  --color-pink-light: #FFB6C1;
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-sans: 'Outfit', sans-serif;
+  --animate-diya: diya-float 3s ease-in-out infinite;
+  --animate-glow: diya-glow 2s ease-in-out infinite;
+  --animate-bell: bell-ring 2s ease-in-out infinite;
+}
+
+@keyframes diya-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes diya-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 153, 51, 0.4), 0 0 30px rgba(255, 198, 26, 0.2);
+    filter: drop-shadow(0 0 8px rgba(255, 198, 26, 0.6));
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 153, 51, 0.8), 0 0 45px rgba(255, 198, 26, 0.5);
+    filter: drop-shadow(0 0 15px rgba(255, 153, 51, 0.9));
+  }
+}
+
+@keyframes bell-ring {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(12deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(6deg); }
+  80% { transform: rotate(-4deg); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDF2;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF9933;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E67E22;
+}
+
+/* Custom decorative elements */
+.mandala-bg {
+  background-image: radial-gradient(rgba(255, 198, 26, 0.08) 1.5px, transparent 1.5px),
+                    radial-gradient(rgba(255, 153, 51, 0.05) 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Marigold flower garland */
+.marigold-border {
+  position: relative;
+}
+.marigold-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, #FFC61A, #FFC61A 12px, #FF9933 12px, #FF9933 24px);
+  z-index: 10;
+}
+
+/* Traditional Rangoli Border */
+.rangoli-border {
+  border-image: repeating-linear-gradient(45deg, #8B0000, #8B0000 10px, #FF9933 10px, #FF9933 20px, #FFC61A 20px, #FFC61A 30px) 15;
+}
+
+/* Diya glow animation classes */
+.diya-glow-orange {
+  animation: diya-glow 2.5s ease-in-out infinite;
+}
+
+.bell-hover:hover {
+  animation: bell-ring 1s ease-in-out;
+  transform-origin: top center;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #FFFDF2; /* Cream light background */
+  color: #333333;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', Georgia, serif;
+}
